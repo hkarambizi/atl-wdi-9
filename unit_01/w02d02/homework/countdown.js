@@ -3,7 +3,7 @@
 // See LICENSE for details.
 
 window.onload = function(){
-  var timerVal = 100;
+  var timerVal = 15;
   console.log(timerUI);
 
   var countDown = function(){
