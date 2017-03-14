@@ -10,6 +10,7 @@ var hbs = require('hbs');
 
 app.set("view engine", "hbs");
 app.set('views', './views');
+app.use(express.static(__dirname + '/public'));
 
 //route for home
 app.get('/', function(req, res) {
@@ -34,6 +35,13 @@ app.get('/order/:amount/:size', function(req, res, next) {
    res.render('order', {
 		data: orderDetails
 	});
+});
+//404 Error message
+app.get('*', function(req, res){
+ 	var errorMsg = "Page Not Found"
+ 	res.render('error', {
+ 		data: errorMsg
+ 	});
 });
 
 // tells the server to listen for requests on port 3000

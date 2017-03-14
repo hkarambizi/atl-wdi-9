@@ -1,0 +1,17 @@
+body {
+   background-image: url("https://s-media-cache-ak0.pinimg.com/originals/36/10/06/3610062ed612bf558fc08ed252fe6241.jpg");
+    background-repeat: repeat;
+}
+
+h1 {
+	font-family: 'Shrikhand', cursive;
+	text-shadow: 2px 2px #ff0000;
+	color: #FFF1DD;
+}
+
+h2, h3 {
+	font-family: 'Overpass Mono', monospace;
+	color: #2B2926;
+	font-size: 36px;
+	text-shadow: 2px 2px #ff0000;
+}
