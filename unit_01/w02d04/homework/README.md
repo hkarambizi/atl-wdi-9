@@ -50,7 +50,7 @@ The `data-index` thing is a _**data attribute**_ -- it's a property of an
 element that we can use to store relevant data. All such properties can be
 accessed by grabbing the element from the DOM and referencing its `dataset`
 property; specifically, to get the value in `data-counter-id`, we would need to
-access a sub-property of `dataset` called `.counterId`.
+access a sub-property of `dataset` called `.counterId`. ////////////////////////   $('').dataset.counterId
 
 > Data attributes can take any name you want to given them, so we could equally
 > have called this property `data-banana` (and accessed it via

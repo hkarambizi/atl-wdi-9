@@ -67,4 +67,8 @@ const AppController = {
 
 window.onload = function(){
   // Attach AppController methods to the DOM as event handlers here.
+  $('#start').on('click', function() {
+    console.log(this);
+    console.log(success)
+  })
 };
