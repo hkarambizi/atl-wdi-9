@@ -6,21 +6,34 @@ var express = require('express');
 var app     = express();
 // assigning 3000 as our port
 var port    = 3000;
+var hbs = require('hbs');
 
+app.set("view engine", "hbs");
+app.set('views', './views');
 
-//index "/" route for home
+//route for home
 app.get('/', function(req, res) {
-	res.send("Welcome to Pizza Express!");
+	var welcomeMessage = "Welcome to Pizza Express!";
+	res.render('index', {
+		data: welcomeMessage
+	});
 });
 
+//route for toppings
 app.get('/topping/:type', function(req, res, next) {
-
-    res.send(`${req.params.type} pizza!, Good Choice.`)
+	var toppingsChoice = `${req.params.type} pizza!, Good Choice.`
+    res.render('toppings', {
+		data: toppingsChoice
+	});
 });
 
+//route for order details
 app.get('/order/:amount/:size', function(req, res, next) {
 
-   res.send(`Your order of ${req.params.amount} ${req.params.size} pizzas will be ready in 1 minute!`);
+   var orderDetails = `Your order of ${req.params.amount} ${req.params.size} pizzas will be ready in 1 minute!`;
+   res.render('order', {
+		data: orderDetails
+	});
 });
 
 // tells the server to listen for requests on port 3000
