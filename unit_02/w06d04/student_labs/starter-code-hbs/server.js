@@ -8,6 +8,7 @@ var app         = express();
 var port        = process.env.PORT || 3000;
 /* set up the application params*/
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 app.use(bodyParser.urlencoded({
     extended: true
@@ -19,6 +20,7 @@ app.use( logger('dev'));
 /*Views*/
 app.set('view engine', 'hbs');
 
+app.use(methodOverride('_method'));
 var todosController = require('./controllers/todos.js');
 app.use('/todos', todosController);
 

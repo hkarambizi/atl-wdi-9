@@ -9,14 +9,21 @@ var barrels = function(small, large, total){
 return largeBarrel;
 };
 
+barrels(2, 5, 825);
 //*************************
 // Problem 2:
 // Sailing the Seas
 
 var shipFuelCost = function(fuelPrice, milesPerGallon){
   //your code here
+  var earthCircumference = 24,901;
+  var earthGallons = earthCircumference / milesPerGallon;
+  var earthFuelCost = earthGallons * fuelPrice;
+
+  return earthFuelCost;
 };
 
+shipFuelCost(3, 12);
 //*************************
 // Problem 3:
 // GROG

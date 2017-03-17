@@ -1,5 +1,5 @@
 module.exports = [
-	{
+	 {
 	  name: 'Anne Bonny',
 	  birthplace: 'Kinsale, Ireland',
 	  death_year: 1782,
@@ -90,4 +90,4 @@ module.exports = [
     base: "England",
 	  nickname: "Captain Kidd"
 	}
-];
+]
