@@ -42,8 +42,11 @@ router.get('/:index', function(req, res) {
 });
 
 router.get('/:index/edit', function(req, res) {
-	res.render('edit')
-})
+	res.render('edit', {
+			name: data[req.params.index].name,
+			id: req.params.index
+		});
+	});
 //***************************
 // CREATE
 //***************************
@@ -68,9 +71,9 @@ router.put('/:index', function(req, res) {
   pokeToEdit.img = req.body.img;
   pokeToEdit.type = req.body.type;
  
-
+  id: req.params.index;
   res.redirect('/pokemon');
-})
+});
 
 
 //***************************
@@ -78,6 +81,11 @@ router.put('/:index', function(req, res) {
 //***************************
 //make a DELETE route '/:index' that will delete the Pokemon at this index.
 
+//delete
+router.delete('/:index', function(req, res){
+  data.splice(req.params.index, 1);
+  res.redirect('/pokemon');
+});
 
 
 //***************************
