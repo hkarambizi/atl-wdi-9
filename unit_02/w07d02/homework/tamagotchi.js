@@ -10,16 +10,21 @@ function Tamagotchi(foodInTummy, restedness, health) {
 		console.log("This tamagotchi has this much food in tummy: " + this.foodInTummy);
 		console.log("WAAAHH!!!!. This tamagotchi is now crying!");
 	}
+	this.puke = function() {
+		this.food
+	}
 };
 
 //create new Tamagotchis
 //1st Tamagotchi named "Shirley"
 var earl = new Tamagotchi();
 	earl.name = "Earl";
+	earl.creatureType = "Drunkard";
 	earl.cry();
 //2nd Tamagotchi named "Shirley"
 var shirley = new Tamagotchi();
 	shirley.name = "Shirley";
+	shirley.creatureType = "Sheriff";
 	shirley.cry();
 
 
