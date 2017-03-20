@@ -19,18 +19,24 @@ function Tamagotchi(name, creatureType) {
 	}
 	this.yawn = function() {
 		this.restedness--;
-		console.log(this.name + "has current restedness of: " + this.restedness);
+		console.log(this.name + " has current restedness of: " + this.restedness);
 	}
 };
 
 
 //create new Tamagotchis
-//1st Tamagotchi named "Shirley"
+//1st Tamagotchi named "Earl"
 var earl = new Tamagotchi('Earl', 'Drunkard');
 	earl.cry();
 //2nd Tamagotchi named "Shirley"
 var shirley = new Tamagotchi('Shirley', 'Sheriff');
 	shirley.cry();
-
-
+//3rd Tamagotchi named "Elizabeth"
+var liz = new Tamagotchi('Elizabeth', 'School Principal');
+	liz.yawn();
+	liz.puke();
+//4th Tamagotchi named "Shawn"
+var shawn = new	Tamagotchi('Shawn', 'Lawyer');
+	shawn.puke();
+	shawn.yawn();
 //test out your Tamagotchies below via console.logs
