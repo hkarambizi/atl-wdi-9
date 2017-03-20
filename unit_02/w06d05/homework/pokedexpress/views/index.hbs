@@ -1,0 +1,13 @@
+<h1>My PokeDex</h1>
+<h2>You have caught {{data.length}} Pokemon!</h2>
+<ul>
+  {{#each data}}
+    <li><a href="/pokemon/{{@index}}">{{name}}</a></li>
+  {{/each}}
+</ul>
+
+<div>
+  <form action="/pokemon/new">
+    <input type="submit" value="Add a New Pokemon"/>
+  </form>
+</div>

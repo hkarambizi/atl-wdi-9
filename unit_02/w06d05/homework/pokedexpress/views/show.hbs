@@ -1,0 +1,15 @@
+<!-- On the Pokemon's show page, display: name, img, type, and stats.-->
+<div class='pokemon-card'><h1>{{data.name}}</h1>
+	<div class='img-container'><img src='{{data.img}}'></div>
+	<ul>
+		<li>Type: {{data.type}}</li>
+		<li>Stats:</li>
+			<ul>
+				<li>HP: {{data.stats.hp}}</li>
+				<li>Defense: {{data.stats.defense}}</li>
+				<li>SP Attack: {{data.stats.spattack}}</li>
+				<li>SP Defense: {{data.stats.spdefense}}</li>
+				<li>Speed: {{data.stats.speed}}</li>
+				</ul>
+	</ul>
+</div>
