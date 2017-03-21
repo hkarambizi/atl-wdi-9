@@ -21,6 +21,23 @@ function Tamagotchi(name, creatureType) {
 		this.restedness--;
 		console.log(this.name + " has current restedness of: " + this.restedness);
 	}
+	this.start = function() {
+		console.log("Starting timers for: " + this.name);
+		var that = this;
+		this.hungerTimer = setInterval(function() {
+			that.cry()}, 6000); 
+		this.yawnTimer = setInterval(function() {
+			that.yawn()}, 10000);
+		this.sickTimer = setInterval(function() {
+			that.puke()}, 20000);
+		}
+	this.stop = function(){
+    console.log("Stopping timers for: " + this.name);
+    clearInterval(this.hungerTimer);
+    clearInterval(this.yawnTimer);
+    clearInterval(this.sickTimer);
+  }								
+
 };
 
 
