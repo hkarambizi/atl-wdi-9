@@ -26,8 +26,9 @@ router.get('/', function(req, res){
 // NEW
 //======================
 // Create a GET new route "/new" that renders the new.hbs form
-
-
+router.get('/new', function(req, res){
+      res.render('donuts/new.hbs');
+    });
 
 //======================
 // SHOW

@@ -28,13 +28,9 @@ app.use( logger('dev'));
 //======================
 // CONTROLLERS
 //======================
-//for seed file, seed the database
-var seedController = require('./controllers/seeds.js');
-app.use('/seed', seedController);
-
 //for root directory, show all donuts
 var donutsController = require('./controllers/donutsController.js');
-app.use('/', donutsController);
+app.use('/donuts', donutsController);
 
 //======================
 // LISTENERS
