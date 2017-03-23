@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   User.find({})
   .exec(function(err, users){
     if (err) { console.log(err); }
-    res.render('users/index.hbs', { users: users });
+    res.render('users/users.hbs', { users: users });
   });
 });
 
@@ -28,8 +28,6 @@ router.get('/:id', authHelpers.authorized, function(req, res){
     res.render('users/show.hbs', { user: user } );
   });
 });
-
-
 
 //User registration
 //Auth stuff: POST "/" save username, email, and password

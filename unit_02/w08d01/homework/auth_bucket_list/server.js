@@ -38,7 +38,14 @@ app.use('/sessions', sessionsController);
 //add the third app.use here (check readme for which route)
 app.use('/users/:userId/lists', listsController);
 
-
+//SHOW: create a GET "/" that displays a welcome on the index page
+app.get('/', function(req, res) {
+  User.find({})
+  .exec(function(err, users){
+    if (err) { console.log(err); }
+    res.render('index.hbs', { users: users });
+  });
+});
 
 app.listen(4000, function() {
   console.log('Yah BISH! We are live and direct muh fuh!');
