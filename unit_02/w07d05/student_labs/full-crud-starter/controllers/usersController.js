@@ -10,7 +10,9 @@ router.get('/', function(req, res){
     .exec(function(err, users){
       if (err) { console.log(err); }
       console.log(users);
-      res.send(users);
+      res.render('users/index.hbs', {
+        user: users
+      });
     });
 });
 
@@ -20,9 +22,24 @@ router.get('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log(user);
-    res.send(user);
+    res.render('users/show.hbs', {
+      user: user
+    });
   });
 });
+
+// USER EDIT ROUTE
+router.get('/:id/edit', function(req, res){
+  User.findById(req.params.id)
+  .exec(function(err, user) {
+    if (err) console.log(err);
+    console.log(user);
+    res.render('users/edit.hbs', {
+      user: user
+    });
+  });
+});
+
 
 // USER CREATE ROUTE
 router.post('/', function(req, res){
@@ -35,11 +52,12 @@ router.post('/', function(req, res){
     if (err) { console.log(err); }
     console.log(user);
     res.send(user);
+    res.redirect('/');
   });
 });
 
 // USER UPDATE ROUTE
-router.patch('/:id', function(req, res){
+router.put('/:id', function(req, res){
   User.findByIdAndUpdate(req.params.id, {
     first_name: req.body.first_name,
     email: req.body.email
@@ -47,7 +65,9 @@ router.patch('/:id', function(req, res){
   .exec(function(err, user){
     if (err) { console.log(err); }
     console.log(user);
-    res.send(user);
+    res.render('users/show.hbs', {
+      user: user
+    });
   });
 });
 
@@ -59,6 +79,20 @@ router.delete('/:id', function(req, res){
     console.log('User deleted!');
     res.send("User deleted");
   });
+});
+
+// ITEM INDEX ROUTE
+router.get('/:id/items', function(req, res){
+  User.findById(req.params.id)
+    .exec(function(err, user){
+      if (err) { console.log(err); }
+      console.log(user.id)
+      console.log(user.items)
+      res.render('items/index.hbs', {
+        items: user.items,
+        user: user
+      });
+    });
 });
 
 // ADD A NEW ITEM

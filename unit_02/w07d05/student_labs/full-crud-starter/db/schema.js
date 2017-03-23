@@ -17,6 +17,13 @@ var UserSchema = new Schema({
   items: [ItemSchema]
 });
 
+var ProjectIdeaSchema = new Schema({
+    description: String,
+    in_progress: Boolean, 
+    created_at: Date,
+    updated_at: Date,
+});
+
 UserSchema.pre('save', function(next){
   now = new Date();
   this.updated_at = now;
@@ -29,8 +36,10 @@ UserSchema.pre('save', function(next){
 
 var UserModel = mongoose.model("User", UserSchema);
 var ItemModel = mongoose.model("Item", ItemSchema);
+var ProjectModel = mongoose.model("Project", ProjectIdeaSchema);
 
 module.exports = {
   User: UserModel,
-  Item: ItemModel
+  Item: ItemModel,
+  Project: ProjectModel
 };
