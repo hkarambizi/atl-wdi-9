@@ -1,1 +1,29 @@
+
 <h1>User Name's Summer Bucket List</h1>
+		<h2>You are viewing:{{user.username}}</h2>
+
+		<a href="/users">Return to Users</a>
+
+		<div class="list-container">
+			<h2 id="user-name">{{user.username}}</h2>
+			<br>
+			<ul>
+			  {{#each user.list}}
+			    <li>List {{this.list.name}}</a></li>
+			    <li>Completed?: {{this.list.completed}}</li>
+			    <button><a href="/{{this.list.id}}/edit">Edit List Details</a></button>
+			    <br/>
+			  {{/each}}
+			</ul>
+
+					<form action="/users/{{user.id}}" method="POST">
+					  <div>
+					    <label for="name">New List Item: </label>
+					      <input type="text" name="name">
+					  </div>
+					  <div>
+					    <input type="submit" value="Add Item To List">
+					  </div>
+
+
+			</div>

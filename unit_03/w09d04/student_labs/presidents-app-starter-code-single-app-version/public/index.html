@@ -12,14 +12,17 @@
 
     <section ng-controller="PresidentsController as presidents">
       <h1>The Presidents of the United States of America</h1>
-
+      <div class='card'>
       <ul id="presidents">
         <li ng-repeat="president in presidents.all">
-          <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
+          <div class="remove" ng-click="presidents.removePresident(president)">
+          <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em><span style="float: right; color: red; cursor: pointer;">X</span>
+          </div>
         </li>
       </ul>
-
-      <form class="add-president" ng-submit='presidents.addPresident()'>
+      </div>
+<div ng-if="presidents.loadingAll"><img src="/images/loading.gif" style="width: 50px;"></div>
+      <form class="add-president" ng-submit='presidents.addPresident(presidents.newPresident)'>
         <div>
           <label for="new-president-name">President's Name</label>
           <input type="text" id="new-president-name" placeholder="James Monroe" ng-model='presidents.newPresident.name'>

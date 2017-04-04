@@ -69,6 +69,9 @@ items.forEach(function(item, i){
   });
 });
 
+
+
+// we added two projects to each user(the first with index matching the index of the user and the second with an index that is one greater than the index of the user in the iteration)
 users.forEach(function(user, i){
   user.project_ideas.push(projectIdeas[i]);
 

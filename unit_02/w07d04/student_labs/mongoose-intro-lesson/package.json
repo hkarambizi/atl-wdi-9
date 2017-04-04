@@ -1,0 +1,16 @@
+{
+  "name": "mongoose-intro-lesson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Harry Karambizi",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^4.9.1"
+  }
+}

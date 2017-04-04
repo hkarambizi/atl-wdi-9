@@ -6,7 +6,8 @@ var logger = require('morgan');
 var hbs = require('hbs');
 var mongoose = require('mongoose');
 var pry = require('pryjs')
-
+var User = require('./models/user.js');
+var List = require('./models/list.js');
 
 
 var usersController = require('./controllers/usersController.js');

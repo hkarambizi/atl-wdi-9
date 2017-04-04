@@ -20,7 +20,11 @@ fs.readFile(inFile, { encoding: 'utf8' }, function(error, content) {
   });
 });
 
+
+//promises attempt
 var promiseToReadFile = new Promise(function(resolve, reject) {
+  
+
    let lines = content.split('\n');
    lines.pop();
  });

@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
   User.find({})
   .exec(function(err, users){
     if (err) { console.log(err); }
-    res.render('users/users.hbs', { users: users });
+    res.render('users/index.hbs', { users: users });
   });
 });
 
