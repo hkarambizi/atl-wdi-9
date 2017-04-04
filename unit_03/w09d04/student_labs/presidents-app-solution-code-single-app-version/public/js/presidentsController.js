@@ -11,6 +11,7 @@ function PresidentsController($http){
   vm.all = [];
   vm.deletePresident = deletePresident;
   vm.newPresident = {};
+  vm.updatePresident = updatePresident;
 
   activate();
 
@@ -32,6 +33,27 @@ function PresidentsController($http){
       .delete('/presidents/' + president._id)
       .then(function(response){
         removePresidentFromList(president);
+      });
+  }
+
+  function getPresidents(){
+    $http
+      .get('/presidents')
+      .then(function(response){
+        vm.all = response.data.presidents;
+      });
+  }
+
+  function removePresidentFromList(president) {
+    var index = vm.all.indexOf(president);
+    vm.all.splice(index, 1);
+  }
+
+  function updatePresident(president){
+    $http
+      .patch('/presidents/' + president._id, president)
+      .then(function(response){
+        president.isEditing = false
       });
   }
 
