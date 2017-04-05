@@ -136,12 +136,12 @@ form#newCriminal input[type=submit]:focus {
   outline: none;
 }
 
-.error-messages {
+/*.error-messages {
   color: maroon;
   position: relative;
 }
-
-.error-messages div {
+*/
+.error-messages {
     position: absolute;
     opacity: 1;
     transition: 0.3s linear all;
@@ -162,7 +162,7 @@ form#newCriminal input[type=submit]:focus {
       opacity: 1;
       top: 0;
     }
-    
+
 .error-messages.ng-leave-active {
       opacity: 0;
       top: 20px;
