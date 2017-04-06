@@ -10,6 +10,9 @@ function MoviesController() {
         { title: 'In Bruges', year: 2008 },
         { title: 'Breakin 2: Electric Boogaloo', year: 1984 },
         { title: 'Drumline', year: 2002 },
-        { title: 'The Bicycle Thief', year: 1948 }
+        { title: 'The Bicycle Thief', year: 1948 },
+        { title: 'Superbad', year: 2007 },
+        { title: 'Tropic Thunder', year: 2009 }
+
     ]
 }
