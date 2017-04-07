@@ -6,11 +6,11 @@
   <li ng-hide="$ctrl.loading" ng-repeat="criminal in $ctrl.criminals">
     <strong>{{criminal.name}}</strong>
 
-		<!-- Reference for Gerry -->
-    <!-- <em>{{criminal.crime}}</em> -->
-    
-    <span ng-if="criminal.status" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span>
+    <a ui-sref='criminalsShow({criminalId: criminal._id})'>Click to see their crime (in users#show)</a>
+       
+    <button class='btn btn-success'><a ui-sref="criminalsShow({ criminalId:criminal._id })">Show Criminal</a></button> |
+    <button class='btn btn-default'><a ui-sref="editCriminal({ criminalId:criminal._id })">Edit Criminal</a></button> |
+    <button class='btn btn-danger' ng-click="$ctrl.deleteCriminal(criminal._id)">Delete</button>
 
-    <a>Click to see their crime (in users#show)</a>
   </li>
 </ul>

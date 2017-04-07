@@ -1,0 +1,22 @@
+<h2>Edit {{$ctrl.current.name}}:</h2>
+
+
+<div>
+  Name: {{$ctrl.current.name}}
+  <br>
+  Crime: {{$ctrl.current.crime}}
+</div>
+
+<form ng-submit="$ctrl.editCriminal($ctrl.current)">
+    <div>
+      <label for="editCriminal-name">Name:</label>
+      <input type="text" id="editCriminal-name" ng-model="$ctrl.current.name" placeholder="Enter Criminal Name..">
+    </div>
+    <div>
+      <label for="editCriminal-crime">Crime: </label>
+      <input type="text" id="editCriminal-crime" ng-model="$ctrl.current.crime" placeholder="Enter Crime..">
+    </div>
+    <div>
+      <input type="submit" value="Edit Criminal">
+    </div>
+  </form>

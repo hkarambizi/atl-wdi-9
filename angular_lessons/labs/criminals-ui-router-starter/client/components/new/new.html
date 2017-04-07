@@ -1,0 +1,13 @@
+<form ng-submit="$ctrl.addCriminal()">
+    <div>
+      <label for="newCriminal-name">Name:</label>
+      <input type="text" id="newCriminal-name" ng-model="$ctrl.newCriminal.name" placeholder="Enter Criminal Name..">
+    </div>
+    <div>
+      <label for="newCriminal-crime">Crime: </label>
+      <input type="text" id="newCriminal-crime" ng-model="$ctrl.newCriminal.crime" placeholder="Enter Crime..">
+    </div>
+    <div>
+      <input type="submit" value="Add Criminal">
+    </div>
+  </form>

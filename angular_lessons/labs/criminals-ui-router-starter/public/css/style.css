@@ -139,3 +139,24 @@ form#newCriminal input[type=submit]:focus {
 .criminals a {
   font-size: 10px;
 }
+
+.ng-enter {
+  transition: 0.3s linear all;
+  transform: translateX(100px);
+  opacity: 0;
+}
+
+.ng-enter-active {
+  opacity: 1;
+}
+
+.ng-leave {
+opacity: 1;
+}
+
+.ng-leave-active {
+  transition: 0.3s linear all;
+  transform: translateY(-100px);
+  opacity: 0;
+}
+

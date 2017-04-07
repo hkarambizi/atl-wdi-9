@@ -16,4 +16,6 @@ app.use(express.static('public'));
 var criminalsController = require('./controllers/criminals.js');
 app.use('/api/criminals', criminalsController);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000, function(){
+	console.log('Youse a bitch!!!   Nah, Im kidding, youre cool. BTW your server is running');
+});

@@ -21,7 +21,7 @@
         </li>
       </ul>
       </div>
-<div ng-if="presidents.loadingAll"><img src="/images/loading.gif" style="width: 50px;"></div>
+<div ng-show="presidents.loadingAll"><img src="/images/loading.gif" style="width: 50px;"></div>
       <form class="add-president" ng-submit='presidents.addPresident(presidents.newPresident)'>
         <div>
           <label for="new-president-name">President's Name</label>
