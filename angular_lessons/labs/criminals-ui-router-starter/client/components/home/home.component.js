@@ -7,5 +7,5 @@ const component = {
 };
 
 angular
-	.module('criminals')
+	.module('projectThree')
 	.component('home', component);
